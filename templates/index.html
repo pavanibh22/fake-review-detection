@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fake Review Detection</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f2f2f2;
+				text-align: center;
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				background-color: #ffffff;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+				padding: 20px;
+				margin: 20px auto;
+				max-width: 700px;
+			}
+
+			h1 {
+				color: #333;
+			}
+
+			input[type="text"] {
+				width: 80%;
+				padding: 10px;
+				margin: 10px 0;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				font-size: 16px;
+			}
+
+			input[type="submit"]:disabled {
+				background-color: #3b596e;
+				color: #fff;
+				border: none;
+				border-radius: 5px;
+				padding: 10px 20px;
+				font-size: 18px;
+				cursor: not-allowed;
+			}
+
+			input[type="submit"] {
+				background-color: #007bff;
+				color: #fff;
+				border: none;
+				border-radius: 5px;
+				padding: 10px 20px;
+				font-size: 18px;
+				cursor: pointer;
+			}
+
+			.success {
+				color: #28a745; /* Green color */
+			}
+
+			.fake {
+				color: red; /* Green color */
+			}
+
+			.message {
+				font-size: 18px;
+				margin-top: 20px;
+			}
+
+			#prediction_result {
+				background-color: #ffffff;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+				padding: 20px;
+				margin: 20px auto;
+				max-width: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Fake Review Detection</h1>
+			<form method="POST" action="/process">
+				<input
+					type="text"
+					name="user_review"
+					value="{{user_review}}"
+					placeholder="Enter your review here"
+				/>
+				<br />
+				<input type="submit" value="Submit" name="submit" disabled />
+			</form>
+		</div>
+		<div id="prediction_result">
+			{% if result == True %}
+			<p class="success">Genuine</p>
+			{% elif result == False %}
+			<p class="fake">Fake!!</p>
+			{% else %}
+			<p>Please give a review</p>
+			{% endif %}
+		</div>
+	</body>
+	<script defer>
+		const input = document.getElementsByName("user_review");
+		input[0].addEventListener("input", function processInput() {
+			const val = input[0].value;
+			console.log("val", val);
+			if (val === undefined || val.length <= 0) {
+				document.getElementsByName("submit")[0].setAttribute("disabled", "");
+				btn[0].disabled = true;
+			} else {
+				document.getElementsByName("submit")[0].removeAttribute("disabled");
+			}
+		});
+	</script>
+</html>
