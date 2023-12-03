@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ES FALSO</title>
+		<link
+			href="https://fonts.cdnfonts.com/css/gill-sans-std"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css"
+		/>
+		<link rel="stylesheet" href="../static/main.css" />
+	</head>
+	<body>
+		<header id="header">
+			<div class="container">
+				<div class="header-title">
+					<a href="./landing.html" class="header-title">Home</a>
+				</div>
+			</div>
+		</header>
+		<section id="body" style="margin-top: 65px; padding: 20px 20px">
+			<div class="container flex-row" style="align-items: center">
+				<div class="left">
+					<div class="main-title typing">ES FALSO</div>
+					<h2 class="subtitle">
+						<span>Enter the review</span>
+					</h2>
+					<form method="POST" action="/process">
+						<input
+							type="text"
+							name="user_review"
+							value="{{user_review}}"
+							placeholder="Enter your review here"
+							style="
+								width: 70%;
+								height: 35px;
+								border: 2px solid #84aca4;
+								border-radius: 10px;
+							"
+						/>
+						<br />
+						<input
+							type="submit"
+							value="Submit"
+							name="submit"
+							class="btn"
+							disabled
+						/>
+					</form>
+				</div>
+				<div class="right" style="text-align: center">
+					<div id="prediction_result">
+						{% if result == True %}
+						<image src="../static/gen.jpg" width="250px" />
+						{% elif result == False %}
+						<image src="../static/fake.jpg" width="250px">
+						{% else %}
+						<div class="cssanimation leMagnify sequence infinite">
+							Please give a review
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</section>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"
+		></script>
+	</body>
+</html>

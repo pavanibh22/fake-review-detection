@@ -1,0 +1,143 @@
+* {
+	font-family: "Gill Sans Std", "Gill Sans MT", "Trebuchet MS",  sans-serif;
+	background-color: #137f70;
+}
+header {
+	background: #fff;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+}
+.container {
+	align-items: center;
+	display: flex;
+	height: 65px;
+	justify-content: center;
+}
+.header-title {
+	color: white;
+	font-size: 20px;
+	font-weight: 900;
+	letter-spacing: 0.2px;
+	text-decoration: none;
+}
+section {
+	position: relative;
+}
+#body {
+	border-radius: 30px;
+	overflow: hidden;
+}
+#body .container {
+	margin: 0 auto;
+	padding: 0 24px;
+	width: 100%;
+	display: flex;
+	height: 90vh;
+	justify-content: center;
+	align-items: flex-start;
+}
+.flex-column {
+	flex-direction: column;
+}
+.flex-row {
+	flex-direction: row;
+}
+.main-title {
+	color: white;
+	font-size: 88px;
+	font-weight: 1000;
+	letter-spacing: 3.46009px;
+	line-height: 120px;
+	margin-bottom: 60px;
+	text-transform: uppercase;
+}
+.sub-content {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.info {
+	max-width: 817px;
+	padding-right: 30px;
+	width: 100%;
+}
+.desc {
+	color: #757575;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 0.2px;
+	line-height: 24px;
+	margin-bottom: 24px;
+	max-width: 604px;
+	text-transform: capitalize;
+}
+.sub-content .img {
+	max-width: 400px;
+	padding-right: 15%;
+}
+.subtitle span {
+	font-size: 54px;
+	font-weight: 800;
+	letter-spacing: 0.2px;
+	line-height: 65px;
+	margin-bottom: 24px;
+	text-transform: capitalize;
+	color: white;
+}
+.btn {
+	align-items: center;
+	color: white;
+	cursor: pointer;
+	display: flex;
+	font-size: 18px;
+	font-weight: 500;
+	height: 54px;
+	justify-content: center;
+	letter-spacing: 0.46px;
+	text-decoration: none;
+	transition: all 0.5s ease;
+	width: 219px;
+	background-color: #6a9d38;
+	border-radius: 10px;
+}
+.desc {
+	color: #fffffa;
+	margin-top: 30px;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.typing {
+	width: 494px;
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 1px solid #000;
+	animation: typing 2s steps(12, end), cursor 0.2s steps(12, end) infinite;
+}
+::placeholder {
+	color: white;
+	text-align: center;
+}
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+@keyframes cursor {
+	50% {
+		border-color: transparent;
+	}
+}
+.body-main {
+	display: flex;
+	flex-direction: row;
+}
+.left,
+.right {
+	width: 50%;
+}

@@ -37,7 +37,7 @@ def load_data():
 # Define a route to render the HTML page
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('landing.html')
 
 # Define a route to handle the form submission
 @app.route('/process', methods=['POST'])
@@ -45,7 +45,7 @@ def process():
     user_review = request.form.get('user_review')  # Get the input from the form
 
     if user_review=="": 
-        return render_template('index.html', result=None)
+        return render_template('review.html', result=None)
     # You can process user_input here or perform any other desired actions.
     # Load data from the pickle file
     loaded_model = load_data()
@@ -68,7 +68,7 @@ def process():
 
     print(f"Input String: {user_review}, Data from Pickle: {prediction}")
 
-    return render_template('index.html', result=result, user_review=user_review)
+    return render_template('review.html', result=result, user_review=user_review)
 
 if __name__ == '__main__':
     app.run(debug=True)
